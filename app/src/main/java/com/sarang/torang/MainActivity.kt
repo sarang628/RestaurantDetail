@@ -8,9 +8,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
-import com.sarang.library.LocalImageLoader
-import com.sarang.library.RestaurantDetailNavigationScreen
-import com.sarang.library.RestaurantDetailScreen
+import com.sarang.library.compose.LocalImageLoader
+import com.sarang.library.compose.RestaurantDetailNavigationScreen
+import com.sarang.library.compose.restaurantdetail.RestaurantDetailScreen
 import com.sarang.torang.di.image.customImageLoader
 import com.sryang.torang.ui.TorangTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -22,7 +22,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             TorangTheme {
                 CompositionLocalProvider(LocalImageLoader provides customImageLoader) {
-                    RestaurantDetailScreenTest()
+                    //RestaurantDetailScreenTest()
+                    RestaurantDetailNavigationScreen_()
                 }
             }
         }

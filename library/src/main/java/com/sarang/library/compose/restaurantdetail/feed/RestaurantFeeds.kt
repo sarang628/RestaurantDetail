@@ -1,9 +1,11 @@
-package com.sarang.library
+package com.sarang.library.compose.restaurantdetail.feed
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.sarang.library.Feed
+import com.sarang.library.compose.restaurantdetail.feed.RestaurantFeedsViewModel
 
 @Composable
 fun RestaurantFeeds(

@@ -1,4 +1,4 @@
-package com.sarang.library
+package com.sarang.library.compose.restaurantdetail
 
 import android.util.Log
 import androidx.compose.foundation.layout.Box
@@ -14,6 +14,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.unit.dp
+import com.sarang.library.Feed
+import com.sarang.library.compose.LocalPullToRefresh
+import com.sarang.library.compose.RestaurantInfoTitle
+import com.sarang.library.compose.restaurantdetail.summary.RestaurantReviewSummary_
+import com.sarang.library.compose.restaurantdetail.feed.RestaurantFeeds
+import com.sarang.library.compose.restaurantdetail.gallery.RestaurantImages_
+import com.sarang.library.compose.restaurantdetail.menu.RestaurantMenus_
+import com.sarang.library.compose.restaurantdetail.review.RestaurantReviews_
 import com.sarang.torang.compose.restaurant.detail.components.RestaurantReservation
 
 enum class RestaurantDetailOrder{
@@ -64,7 +72,9 @@ fun RestaurantDetailScreen(
                     }
 
                     RestaurantDetailOrder.RestaurantMenu -> { // 메뉴
-                        Column(Modifier.padding(start = 8.dp, end = 8.dp)) { RestaurantInfoTitle(title = "Menus"); /*PreviewRestaurantMenuColumn()*/ }
+                        Column(Modifier.padding(start = 8.dp, end = 8.dp)) { RestaurantInfoTitle(
+                            title = "Menus"
+                        ); /*PreviewRestaurantMenuColumn()*/ }
                     }
 
                     RestaurantDetailOrder.RestaurantMenus -> { // 메뉴
@@ -72,12 +82,20 @@ fun RestaurantDetailScreen(
                     }
 
                     RestaurantDetailOrder.RestaurantReviewSummary -> { // 리뷰 통계
-                        RestaurantReviewSummary_(restaurantId = restaurantId, progressTintColor = progressTintColor)
+                        RestaurantReviewSummary_(
+                            restaurantId = restaurantId,
+                            progressTintColor = progressTintColor
+                        )
                         Spacer(modifier = Modifier.height(16.dp))
                     }
 
                     RestaurantDetailOrder.RestaurantReviews -> { // 리뷰
-                        RestaurantReviews_(restaurantId = restaurantId, progressTintColor = progressTintColor, onProfile = onProfile, onContents = onContents)
+                        RestaurantReviews_(
+                            restaurantId = restaurantId,
+                            progressTintColor = progressTintColor,
+                            onProfile = onProfile,
+                            onContents = onContents
+                        )
                     }
 
                     RestaurantDetailOrder.Feed -> { // 피드

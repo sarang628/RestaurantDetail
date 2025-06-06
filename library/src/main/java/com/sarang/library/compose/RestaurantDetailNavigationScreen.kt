@@ -1,4 +1,4 @@
-package com.sarang.library
+package com.sarang.library.compose
 
 import android.util.Log
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -8,6 +8,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.sarang.library.Feed
+import com.sarang.library.compose.restaurantdetail.RestaurantDetailScreen
 
 /**
  * @param map map compose

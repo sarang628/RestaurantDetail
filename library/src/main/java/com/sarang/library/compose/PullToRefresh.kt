@@ -1,4 +1,4 @@
-package com.sarang.library
+package com.sarang.library.compose
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.compositionLocalOf

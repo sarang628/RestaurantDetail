@@ -1,4 +1,4 @@
-package com.sarang.library
+package com.sarang.library.compose.restaurantdetail.summary
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -20,6 +20,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.sarang.library.compose.restaurantdetail.summary.RestaurantReviewSummaryViewModel
+import com.sarang.library.ReviewSummaryData
+import com.sarang.library.compose.RestaurantInfoTitle
 import com.sarang.torang.compose.restaurant.detail.components.AndroidViewRatingBar
 
 @Composable

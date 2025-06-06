@@ -1,4 +1,4 @@
-package com.sarang.library
+package com.sarang.library.compose
 
 import android.util.Log
 import androidx.compose.runtime.Composable

@@ -1,4 +1,6 @@
-package com.sarang.library
+package com.sarang.library.usecase
+
+import com.sarang.library.RestaurantImage
 
 interface GetRestaurantGalleryUseCase {
     suspend fun invoke(restaurantId : Int): List<RestaurantImage>

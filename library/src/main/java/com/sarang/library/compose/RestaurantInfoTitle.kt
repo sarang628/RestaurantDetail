@@ -1,4 +1,4 @@
-package com.sarang.library
+package com.sarang.library.compose
 
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
