@@ -3,30 +3,26 @@ package com.sarang.torang
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import com.sarang.library.LocalImageLoader
 import com.sarang.library.RestaurantDetailNavigationScreen
 import com.sarang.library.RestaurantDetailScreen
-import com.sarang.torang.ui.theme.RestaurantDetailTheme
+import com.sarang.torang.di.image.customImageLoader
+import com.sryang.torang.ui.TorangTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContent {
-            RestaurantDetailTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+            TorangTheme {
+                CompositionLocalProvider(LocalImageLoader provides customImageLoader) {
+                    RestaurantDetailScreenTest()
                 }
             }
         }
@@ -41,13 +37,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
     )
 }
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    RestaurantDetailTheme {
-        Greeting("Android")
-    }
-}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
