@@ -13,7 +13,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.sarang.library.RestaurantImage
+import com.sarang.library.data.RestaurantImage
 import com.sarang.library.compose.LocalImageLoader
 
 @Composable

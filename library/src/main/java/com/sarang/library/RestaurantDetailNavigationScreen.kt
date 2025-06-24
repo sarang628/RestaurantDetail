@@ -1,4 +1,4 @@
-package com.sarang.library.compose
+package com.sarang.library
 
 import android.util.Log
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -8,8 +8,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.sarang.library.Feed
 import com.sarang.library.compose.restaurantdetail.RestaurantDetailScreen
+import com.sarang.library.data.Feed
 
 /**
  * @param map map compose
@@ -48,9 +48,7 @@ fun RestaurantDetailNavigationScreen(
             )
         }
         composable("map") {
-            if (map == null) {
-                Log.w("__RestaurantInfoScreen", "not assigned map composable!")
-            }
+            map.invoke("restaurantName", 0.0, 0.0, "")
         }
     }
 }

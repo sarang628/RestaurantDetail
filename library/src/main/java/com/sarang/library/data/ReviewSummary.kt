@@ -1,4 +1,4 @@
-package com.sarang.library
+package com.sarang.library.data
 
 data class ReviewSummaryData(
     val rating: Float = 0f,

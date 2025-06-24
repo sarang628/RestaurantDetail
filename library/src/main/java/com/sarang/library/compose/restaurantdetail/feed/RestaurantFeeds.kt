@@ -4,7 +4,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.sarang.library.Feed
+import com.sarang.library.data.Feed
 import com.sarang.library.compose.restaurantdetail.feed.RestaurantFeedsViewModel
 
 @Composable

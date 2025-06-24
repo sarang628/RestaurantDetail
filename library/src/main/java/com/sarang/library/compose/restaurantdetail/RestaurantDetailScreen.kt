@@ -14,7 +14,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.unit.dp
-import com.sarang.library.Feed
+import com.sarang.library.compose.LocalDetailRestaurantInfo
+import com.sarang.library.data.Feed
 import com.sarang.library.compose.LocalPullToRefresh
 import com.sarang.library.compose.RestaurantInfoTitle
 import com.sarang.library.compose.restaurantdetail.summary.RestaurantReviewSummary_
@@ -61,20 +62,20 @@ fun RestaurantDetailScreen(
             items(RestaurantDetailOrder.values().size) {
                 when(RestaurantDetailOrder.values()[it]){
                     RestaurantDetailOrder.RestaurantInfo -> { // 레스토랑 기본정보
-
+                        LocalDetailRestaurantInfo.current.invoke(restaurantId)
                         Spacer(modifier = Modifier.height(8.dp))
                     }
 
-                    RestaurantDetailOrder.RestaurantImages -> {// 이미지
+                    RestaurantDetailOrder.RestaurantImages -> { // 이미지
                         Box(Modifier.padding(start = 8.dp, end = 8.dp)) { RestaurantInfoTitle(title = "Images") }
                         RestaurantImages_(restaurantId = restaurantId, onImage = onImage)
                         Spacer(modifier = Modifier.height(8.dp))
                     }
 
                     RestaurantDetailOrder.RestaurantMenu -> { // 메뉴
-                        Column(Modifier.padding(start = 8.dp, end = 8.dp)) { RestaurantInfoTitle(
-                            title = "Menus"
-                        ); /*PreviewRestaurantMenuColumn()*/ }
+                        Column(Modifier.padding(start = 8.dp, end = 8.dp)) {
+                            RestaurantInfoTitle(title = "Menus")
+                        }
                     }
 
                     RestaurantDetailOrder.RestaurantMenus -> { // 메뉴

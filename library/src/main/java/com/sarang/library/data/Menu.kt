@@ -1,4 +1,4 @@
-package com.sarang.library
+package com.sarang.library.data
 
 data class MenuData(val menuName: String, val price: Float, val url: String) {
     companion object {

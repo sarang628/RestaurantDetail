@@ -18,6 +18,6 @@ typealias ImageLoader = @Composable (
 val LocalImageLoader = compositionLocalOf<ImageLoader> {
     // 기본 구현: 경고 로그 출력
     @Composable { _, _, _, _, _ ->
-        Log.w("ImageLoader", "No ImageLoader provided.")
+        Log.w("__ImageLoader", "No ImageLoader provided.")
     }
 }

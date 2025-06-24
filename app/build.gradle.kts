@@ -102,4 +102,9 @@ dependencies {
     implementation(libs.torangRepository)
     implementation(libs.theme)
     implementation(libs.commonImageLoader)
+    implementation(libs.restaurantInfo)
+    implementation(libs.accompanist.permissions)
+    implementation(libs.play.services.location)
+    implementation(libs.kotlin.coroutines.play)
+    implementation(libs.composePermissionTest)
 }

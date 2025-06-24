@@ -1,4 +1,4 @@
-package com.sarang.library
+package com.sarang.library.data
 
 data class ReviewRowData(
     val name: String,

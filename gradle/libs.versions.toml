@@ -62,6 +62,7 @@ constraintlayoutVersion = "2.1.4"
 accompanist = "0.32.0"
 play-services-location = "21.1.0"
 coroutines = "1.7.3"
+restaurantInfoVersion = "62628e5b8e"
 
 # @formatter:off
 [libraries]
@@ -145,6 +146,7 @@ bottomdetectlazycolunm          = { group = "com.github.sarang628", name = "Bott
 chat                            = { group = "com.github.sarang628", name = "Chat",                  version.ref = "chatVersion" }
 torangGrid                      = { group = "com.github.sarang628", name = "TorangGrid",            version.ref = "torangGridVersion" }
 composePermissionTest           = { group = "com.github.sarang628", name = "ComposePermissionTest", version.ref = "composePermissionTestVersion" }
+restaurantInfo                  = { group = "com.github.sarang628", name = "RestaurantInfo",        version.ref = "restaurantInfoVersion" }
 themes                          = { group = "com.github.bingley1",  name = "Themes",                version.ref = "themesVersion" }
 feature-delivery                = { group = "com.google.android.play", name = "feature-delivery",   version.ref = "featureDeliveryVersion"}
 # @formatter:on

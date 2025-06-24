@@ -1,10 +1,10 @@
 package com.sarang.torang.di.restaurantdetail
 
-import com.sarang.library.Feed
-import com.sarang.library.MenuData
-import com.sarang.library.RestaurantImage
-import com.sarang.library.ReviewRowData
-import com.sarang.library.ReviewSummaryData
+import com.sarang.library.data.Feed
+import com.sarang.library.data.MenuData
+import com.sarang.library.data.RestaurantImage
+import com.sarang.library.data.ReviewRowData
+import com.sarang.library.data.ReviewSummaryData
 import com.sarang.torang.BuildConfig
 import com.sarang.torang.data.RestaurantDetail
 import com.sarang.torang.data.remote.response.FeedApiModel

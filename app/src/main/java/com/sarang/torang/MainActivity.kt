@@ -3,15 +3,22 @@ package com.sarang.torang
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
+import com.sarang.library.RestaurantDetailNavigationScreen
+import com.sarang.library.compose.DetailRestaurantInfo
+import com.sarang.library.compose.LocalDetailRestaurantInfo
 import com.sarang.library.compose.LocalImageLoader
-import com.sarang.library.compose.RestaurantDetailNavigationScreen
 import com.sarang.library.compose.restaurantdetail.RestaurantDetailScreen
 import com.sarang.torang.di.image.customImageLoader
+import com.sarang.torang.di.image.provideTorangAsyncImage
+import com.sarang.torang.di.restaurant_info.RestaurantInfoWithPermission
+import com.sryang.library.compose.workflow.BestPracticeViewModel
 import com.sryang.torang.ui.TorangTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -21,13 +28,27 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             TorangTheme {
-                CompositionLocalProvider(LocalImageLoader provides customImageLoader) {
+                CompositionLocalProvider(
+                    LocalImageLoader provides customImageLoader,
+                    LocalDetailRestaurantInfo provides custonRestaurantInfo,
+                    com.sarang.torang.LocalImageLoader provides restaurantImageLoader
+                ) {
                     //RestaurantDetailScreenTest()
                     RestaurantDetailNavigationScreen_()
                 }
             }
         }
     }
+}
+
+val custonRestaurantInfo: DetailRestaurantInfo = {
+    RestaurantInfoWithPermission(restaurantId = it, viewModel = BestPracticeViewModel())
+}
+
+
+val restaurantImageLoader: RestaurantInfoImageLoader = { modifier, url, width, height, scale ->
+    // 여기서 실제 이미지 로딩 구현 예시
+    provideTorangAsyncImage().invoke(modifier, url, width, height, scale)
 }
 
 @Composable
@@ -41,13 +62,13 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun RestaurantDetailScreenTest(restaurantId : Int = 234){
+fun RestaurantDetailScreenTest(restaurantId: Int = 234) {
     RestaurantDetailScreen(restaurantId = restaurantId)
 }
 
 @Composable
 @OptIn(ExperimentalMaterial3Api::class)
-fun RestaurantDetailNavigationScreen_(restaurantId : Int  = 234) {
+fun RestaurantDetailNavigationScreen_(restaurantId: Int = 234) {
     RestaurantDetailNavigationScreen(
         restaurantId = restaurantId,
         feed = {
