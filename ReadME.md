@@ -12,7 +12,7 @@ dependencies {
 }
 ```
 
-## [Hilt 추가] (https://github.com/sarang628/HiltTest?tab=readme-ov-file#for-torang)
+## [Hilt 추가](https://github.com/sarang628/HiltTest?tab=readme-ov-file#for-torang)
 
 ## usecase 모듈 추가
 
@@ -28,9 +28,9 @@ implementation("com.google.android.gms:play-services-location:21.1.0")
 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.3")
 ```
 
-## [usecase에 필요한 저장소를 추가] (https://github.com/sarang628/TorangRepository?tab=readme-ov-file#%EB%AA%A8%EB%93%88-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0)
+## [usecase에 필요한 저장소를 추가](https://github.com/sarang628/TorangRepository?tab=readme-ov-file#%EB%AA%A8%EB%93%88-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0)
 
-## [이미지 모듈 추가] (https://github.com/sarang628/CommonImageLoader?tab=readme-ov-file#%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%A1%9C%EB%93%9C-%EB%AA%A8%EB%93%88-%EC%B6%94%EA%B0%80)
+## [이미지 모듈 추가](https://github.com/sarang628/CommonImageLoader?tab=readme-ov-file#%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%A1%9C%EB%93%9C-%EB%AA%A8%EB%93%88-%EC%B6%94%EA%B0%80)
 
 
 ```
