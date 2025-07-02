@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.CompositionLocalProvider
 import com.sarang.library.compose.DetailRestaurantInfo
+import com.sarang.library.compose.ImageLoader
 import com.sarang.library.compose.LocalDetailRestaurantInfo
 import com.sarang.library.compose.LocalImageLoader
 import com.sarang.library.compose.restaurantdetail.RestaurantDetailScreen
@@ -33,6 +34,11 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
+}
+
+val customImageLoader: ImageLoader = { modifier, url, width, height, scale ->
+    // 여기서 실제 이미지 로딩 구현 예시
+    provideTorangAsyncImage().invoke(modifier, url, width, height, scale)
 }
 
 val customRestaurantInfo: DetailRestaurantInfo = {
