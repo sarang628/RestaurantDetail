@@ -39,9 +39,7 @@ val customRestaurantInfo: DetailRestaurantInfo = {
     RestaurantInfoWithPermission(restaurantId = it, viewModel = BestPracticeViewModel())
 }
 
-
 val restaurantImageLoader: RestaurantInfoImageLoader = { modifier, url, width, height, scale ->
     // 여기서 실제 이미지 로딩 구현 예시
     provideTorangAsyncImage().invoke(modifier, url, width, height, scale)
 }
-
