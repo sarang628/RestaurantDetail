@@ -12,17 +12,8 @@ dependencies {
 }
 ```
 
-```
-root/gradle
-id("com.google.dagger.hilt.android") version "2.46" apply false
-
-app/gradle
-id("kotlin-kapt")
-id("dagger.hilt.android.plugin")
-
-implementation("com.google.dagger:hilt-android:2.46")
-kapt("com.google.dagger:hilt-android-compiler:2.46")
-```
+## Hilt 추가
+https://github.com/sarang628/HiltTest?tab=readme-ov-file#for-torang
 
 ```
 git submodule add (or git clone) https://github.com/sarang628/restauarnt_info_di.git
