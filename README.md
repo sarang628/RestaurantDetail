@@ -1,3 +1,5 @@
+TODO:: RestaurantDetailContainer로 이전하기
+
 ```
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
