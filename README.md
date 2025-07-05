@@ -1,3 +1,5 @@
+TODO:: RestaurantOverView로 프로젝트 변경하기
+
 ## jitpack 추가
 ```
 dependencyResolutionManagement {
