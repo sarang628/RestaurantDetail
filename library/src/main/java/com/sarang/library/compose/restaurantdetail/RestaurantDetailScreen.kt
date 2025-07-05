@@ -15,14 +15,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.unit.dp
 import com.sarang.library.compose.LocalDetailRestaurantInfo
-import com.sarang.library.data.Feed
 import com.sarang.library.compose.LocalPullToRefresh
 import com.sarang.library.compose.RestaurantInfoTitle
-import com.sarang.library.compose.restaurantdetail.summary.RestaurantReviewSummary_
 import com.sarang.library.compose.restaurantdetail.feed.RestaurantFeeds
-import com.sarang.library.compose.restaurantdetail.gallery.RestaurantImages_
-import com.sarang.library.compose.restaurantdetail.menu.RestaurantMenus_
-import com.sarang.library.compose.restaurantdetail.review.RestaurantReviews_
+import com.sarang.library.compose.restaurantdetail.gallery.RestaurantImages
+import com.sarang.library.compose.restaurantdetail.menu.RestaurantMenus
+import com.sarang.library.compose.restaurantdetail.review.RestaurantReviews
+import com.sarang.library.compose.restaurantdetail.summary.RestaurantReviewSummary
+import com.sarang.library.data.Feed
 import com.sarang.torang.compose.restaurant.detail.components.RestaurantReservation
 
 enum class RestaurantDetailOrder{
@@ -68,7 +68,7 @@ fun RestaurantDetailScreen(
 
                     RestaurantDetailOrder.RestaurantImages -> { // 이미지
                         Box(Modifier.padding(start = 8.dp, end = 8.dp)) { RestaurantInfoTitle(title = "Images") }
-                        RestaurantImages_(restaurantId = restaurantId, onImage = onImage)
+                        RestaurantImages(restaurantId = restaurantId, onImage = onImage)
                         Spacer(modifier = Modifier.height(8.dp))
                     }
 
@@ -79,24 +79,16 @@ fun RestaurantDetailScreen(
                     }
 
                     RestaurantDetailOrder.RestaurantMenus -> { // 메뉴
-                        RestaurantMenus_(restaurantId = restaurantId); Spacer(modifier = Modifier.height(16.dp))
+                        RestaurantMenus(restaurantId = restaurantId); Spacer(modifier = Modifier.height(16.dp))
                     }
 
                     RestaurantDetailOrder.RestaurantReviewSummary -> { // 리뷰 통계
-                        RestaurantReviewSummary_(
-                            restaurantId = restaurantId,
-                            progressTintColor = progressTintColor
-                        )
+                        RestaurantReviewSummary(restaurantId = restaurantId, progressTintColor = progressTintColor)
                         Spacer(modifier = Modifier.height(16.dp))
                     }
 
                     RestaurantDetailOrder.RestaurantReviews -> { // 리뷰
-                        RestaurantReviews_(
-                            restaurantId = restaurantId,
-                            progressTintColor = progressTintColor,
-                            onProfile = onProfile,
-                            onContents = onContents
-                        )
+                        RestaurantReviews(restaurantId = restaurantId, progressTintColor = progressTintColor, onProfile = onProfile, onContents = onContents)
                     }
 
                     RestaurantDetailOrder.Feed -> { // 피드

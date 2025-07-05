@@ -19,7 +19,7 @@ import com.sarang.library.compose.RestaurantInfoTitle
 
 
 @Composable
-fun RestaurantMenus_(
+fun RestaurantMenus(
     viewModel: RestaurantMenuViewModel = hiltViewModel(),
     restaurantId: Int
 ) {
@@ -42,7 +42,7 @@ fun RestaurantMenus_(
 }
 
 @Composable
-fun RestaurantMenus(menus: List<MenuData>?) {
+private fun RestaurantMenus(menus: List<MenuData>?) {
     Column(
         Modifier
             .fillMaxWidth()

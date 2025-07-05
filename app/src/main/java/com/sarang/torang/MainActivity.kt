@@ -6,11 +6,10 @@ import androidx.activity.compose.setContent
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.CompositionLocalProvider
 import com.sarang.library.compose.DetailRestaurantInfo
-import com.sarang.library.compose.ImageLoader
 import com.sarang.library.compose.LocalDetailRestaurantInfo
-import com.sarang.library.compose.LocalImageLoader
+import com.sarang.library.compose.LocalRestaurantDetailImageLoader
+import com.sarang.library.compose.RestaurantDetailImageLoader
 import com.sarang.library.compose.restaurantdetail.RestaurantDetailScreen
-import com.sarang.torang.di.image.customImageLoader
 import com.sarang.torang.di.image.provideTorangAsyncImage
 import com.sarang.torang.di.restaurant_info.RestaurantInfoWithPermission
 import com.sryang.library.compose.workflow.BestPracticeViewModel
@@ -25,7 +24,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             TorangTheme {
                 CompositionLocalProvider(
-                    LocalImageLoader provides customImageLoader,
+                    LocalRestaurantDetailImageLoader provides restaurantDetailImageLoader,
                     LocalDetailRestaurantInfo provides customRestaurantInfo,
                     LocalRestaurantInfoImageLoader provides restaurantImageLoader
                 ) {
@@ -36,7 +35,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-val customImageLoader: ImageLoader = { modifier, url, width, height, scale ->
+val restaurantDetailImageLoader: RestaurantDetailImageLoader = { modifier, url, width, height, scale ->
     // 여기서 실제 이미지 로딩 구현 예시
     provideTorangAsyncImage().invoke(modifier, url, width, height, scale)
 }

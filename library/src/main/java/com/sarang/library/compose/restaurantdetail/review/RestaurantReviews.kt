@@ -28,7 +28,7 @@ import com.sarang.library.compose.RestaurantInfoTitle
 import com.sarang.torang.compose.restaurant.detail.components.AndroidViewRatingBar
 
 @Composable
-fun RestaurantReviews_(viewModel: RestaurantReviewViewModel = hiltViewModel(), restaurantId : Int, progressTintColor: Color? = null, onProfile: (Int) -> Unit, onContents: (Int) -> Unit, ) {
+fun RestaurantReviews(viewModel: RestaurantReviewViewModel = hiltViewModel(), restaurantId : Int, progressTintColor: Color? = null, onProfile: (Int) -> Unit, onContents: (Int) -> Unit, ) {
     val uiState = viewModel.uiState
     LaunchedEffect(restaurantId) {
         viewModel.fetch(restaurantId)
@@ -39,7 +39,7 @@ fun RestaurantReviews_(viewModel: RestaurantReviewViewModel = hiltViewModel(), r
 }
 
 @Composable
-fun RestaurantReviews(reviewRowData: List<ReviewRowData> = listOf(), progressTintColor: Color? = null, onProfile: (Int) -> Unit, onContents: (Int) -> Unit, ) {
+private fun RestaurantReviews(reviewRowData: List<ReviewRowData> = listOf(), progressTintColor: Color? = null, onProfile: (Int) -> Unit, onContents: (Int) -> Unit, ) {
     Column(
         Modifier
             .fillMaxWidth()

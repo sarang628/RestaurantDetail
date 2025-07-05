@@ -14,10 +14,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.sarang.library.data.RestaurantImage
-import com.sarang.library.compose.LocalImageLoader
+import com.sarang.library.compose.LocalRestaurantDetailImageLoader
 
 @Composable
-fun RestaurantImages_(
+fun RestaurantImages(
     viewModel: RestaurantGalleryViewModel = hiltViewModel(),
     restaurantId : Int,
     onImage: ((Int) -> Unit)? = null
@@ -29,7 +29,7 @@ fun RestaurantImages_(
     if (uiState.isNotEmpty()) {
         LazyRow(Modifier.height(150.dp).fillMaxWidth()) {
             items(uiState.size, itemContent = {
-                LocalImageLoader.current.invoke(Modifier.height(150.dp).width(150.dp).clickable { onImage?.invoke(uiState[it].id) }, uiState[it].url, 30.dp, 30.dp, ContentScale.Crop)
+                LocalRestaurantDetailImageLoader.current.invoke(Modifier.height(150.dp).width(150.dp).clickable { onImage?.invoke(uiState[it].id) }, uiState[it].url, 30.dp, 30.dp, ContentScale.Crop)
                 Spacer(modifier = Modifier.width(8.dp))
             })
         }
@@ -37,14 +37,14 @@ fun RestaurantImages_(
 }
 
 @Composable
-fun RestaurantImages(
+private fun RestaurantImages(
     list: List<RestaurantImage>? = null,
     onImage: ((Int) -> Unit)? = null,
 ) {
     if (!list.isNullOrEmpty()) {
         LazyRow(Modifier.height(150.dp).fillMaxWidth()) {
             items(list.size, itemContent = {
-                LocalImageLoader.current.invoke(Modifier.height(150.dp).width(150.dp).clickable { onImage?.invoke(list[it].id) }, list[it].url, 30.dp, 30.dp, ContentScale.Crop)
+                LocalRestaurantDetailImageLoader.current.invoke(Modifier.height(150.dp).width(150.dp).clickable { onImage?.invoke(list[it].id) }, list[it].url, 30.dp, 30.dp, ContentScale.Crop)
                 Spacer(modifier = Modifier.width(8.dp))
             })
         }
